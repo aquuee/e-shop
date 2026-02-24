@@ -18,18 +18,14 @@
     </header>
     <main>
         <div class="container mx-auto">
-            <h2>Каталог товаров</h2>
-            <div>
-                @foreach ($products as $product)
-                    <div class="border mb-4 flex">
-                        <img class="w-28 h-full aspect-1 mr-4" src="{{ Vite::asset($product->path_img) }}" alt="{{$product->title}}">
-                        <div>
-                            <a href="{{route('products.show', ['product'=>$product])}}"><h3>{{ $product->title }}</h3></a>
-                            <p>{{ $product->description }}</p>
-                            <p>{{ $product->price }}</p>
-                        </div>
-                    </div>
-                @endforeach
+            <h2>{{$product->title}}</h2>
+            <div class="border mb-4 flex">
+                <img class="w-28 h-full aspect-1 mr-4" src="{{ Vite::asset($product->path_img) }}" alt="{{$product->title}}">
+                <div>
+                    <h3>{{ $product->title }}</h3>
+                    <p>{{ $product->description }}</p>
+                    <p>{{ $product->price }}</p>
+                </div>
             </div>
         </div>
     </main>
