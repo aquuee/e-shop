@@ -28,6 +28,14 @@
                             <p>{{ $product->description }}</p>
                             <p>{{ $product->price }}</p>
                         </div>
+                        <div class="ml-auto">
+                            <a href="">Редактировать</a>
+                            <form action="" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input type="sumbit" value="Удалить">
+                            </form>
+                        </div>
                     </div>
                 @endforeach
             </div>
